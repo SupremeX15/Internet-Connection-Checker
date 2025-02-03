@@ -1,0 +1,166 @@
+
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  
+  height: 100vh;
+  
+  
+  display: flex;
+  flex-direction: column;
+  
+
+  
+  align-items: center;
+  
+  background: linear-gradient(
+    135deg,
+    #1f1c2c,
+    #928dab
+  );
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+.container {
+  padding: 5px;
+  margin-top: 100px;
+  /* margin-left: 50px; */
+  width: 480px;
+  height: 290px;
+  background: linear-gradient(145deg, #31343a, #1b1c1f);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6),
+    -10px -10px 20px rgba(255, 255, 255, 0.1),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.7),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.2);
+  transform: rotateX(25deg) rotateY(25deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  animation: float 3s ease-in-out infinite;
+}
+
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 0, 150, 0.8),
+    rgba(0, 204, 255, 0.8)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 2;
+}
+
+.text {
+  z-index: 3;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #8a2be2, #00d4ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.status {
+  z-index: 3;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #8a2be2, #00d4ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+@keyframes float {
+  0%,
+  100% {
+    transform: rotateX(25deg) rotateY(25deg) translateY(0px);
+  }
+  50% {
+    transform: rotateX(30deg) rotateY(30deg) translateY(-10px);
+  }
+}
+
+
+.container:hover {
+  transform: rotateX(0deg) rotateY(0deg) scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+.heading {
+  text-transform: uppercase;
+  
+  color: #d4af37;
+  background: linear-gradient(45deg, #f7cd59, #f3a305);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(255, 229, 98, 0.4);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  align-items: center;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 20px;
+  
+
+  /* margin: 20px;
+  width: 100%;
+  max-width: 100%;
+  font-size: 2vw;
+  display: flex;
+  word-wrap: break-word;
+  overflow: break-word;
+  justify-content: center;
+  text-align: center;
+  align-items: center; */
+
+}
+#rights{
+  color:rgb(221, 0, 255);
+  margin-top: 150px;
+  align-items: center;
+  font-style: italic;
+  font-size: 22px;
+  text-shadow: darkorange;
+  font-weight: 800;
+
+}
+
+
+@media (max-width: 400px) {
+  .container {
+    max-width: 320px; /* Reduce width for very small screens */
+    padding: 20px;
+  }
+}
+   
